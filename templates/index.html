@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Smart Resume Screening</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f0f4f8;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px;
+    }
+
+    .container {
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 500px;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    input[type="file"] {
+      display: block;
+      margin: 20px auto;
+      font-size: 16px;
+    }
+
+    button {
+      display: block;
+      margin: 0 auto;
+      padding: 10px 20px;
+      background: #0066ff;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background: #004bcc;
+    }
+
+    .score-box {
+      margin-top: 25px;
+      text-align: center;
+      padding: 20px;
+      background: #eaf6ff;
+      border: 2px dashed #0077cc;
+      border-radius: 10px;
+      color: #0077cc;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .footer {
+      margin-top: 30px;
+      text-align: center;
+      font-size: 14px;
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>AI Resume Screening</h2>
+
+    <form action="/" method="post" enctype="multipart/form-data" onsubmit="return validateForm()">
+      <input type="file" name="resume" id="resumeFile" accept=".pdf" required>
+      <button type="submit">Check Match</button>
+    </form>
+
+    {% if score is not none %}
+      <div class="score-box">
+        ✅ Match Score: <strong>{{ score }}%</strong><br>
+        {% if score >= 75 %}
+          <span style="color: green;">Great match! 🟢</span>
+        {% elif score >= 50 %}
+          <span style="color: orange;">Moderate match! 🟠</span>
+        {% else %}
+          <span style="color: red;">Low match! 🔴 Consider improving your resume.</span>
+        {% endif %}
+      </div>
+    {% endif %}
+  </div>
+  {% if missing_skills %}
+  <div class="score-box" style="margin-top: 20px;">
+    ❌ <strong>Missing Keywords:</strong><br>
+    {{ missing_skills | join(', ') }}
+  </div>
+{% endif %}
+
+
+  <div class="footer">
+    © 2025 by Mahesh | AI Project
+  </div>
+
+  <script>
+    function validateForm() {
+      const fileInput = document.getElementById("resumeFile");
+      const filePath = fileInput.value;
+      if (!filePath.endsWith(".pdf")) {
+        alert("Please upload a PDF file.");
+        return false;
+      }
+      return true;
+    }
+  </script>
+
+</body>
+</html>
