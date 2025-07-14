@@ -4,7 +4,7 @@
 An intelligent web application that automatically analyzes resumes against job descriptions and scores their relevance using AI/ML techniques like Natural Language Processing and cosine similarity.
 
 > 🔍 Built using Python, Flask, scikit-learn, and PyPDF2  
-> 👨‍💻 Created by [Mahesh H Kumar](https://github.com/mahesh123-pro)
+> 👨‍💻 Created by [Bakki Mahesh](https://github.com/mahesh123-pro)
 
 ---
 
