@@ -40,17 +40,6 @@ An intelligent web application that automates the resume shortlisting process us
 | AI/ML       | scikit-learn (TF-IDF, Cosine Similarity) |
 | Hosting     | Can be deployed on Render, Railway, or locally |
 
----
-
-## 📁 Project Structure
-
-resume_screening_project/
-├── app.py # Flask application logic
-├── job_description.txt # JD file to compare against resumes
-├── requirements.txt # List of dependencies
-├── templates/
-│ └── index.html # Frontend HTML page
-└── resumes/ # Uploaded resume storage
 
 
 
