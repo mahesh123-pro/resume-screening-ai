@@ -1,35 +1,63 @@
-# resume-screening-ai
-# 🧠 AI-Powered Resume Screening & Ranking System
+#  AI-Powered Resume Screening & Ranking System
 
-An intelligent web application that automatically analyzes resumes against job descriptions and scores their relevance using AI/ML techniques like Natural Language Processing and cosine similarity.
+An intelligent web application that automates the resume shortlisting process using Natural Language Processing (NLP) and Machine Learning techniques. This tool compares candidate resumes with job descriptions and generates a **match score** based on content similarity and missing skills.
 
-> 🔍 Built using Python, Flask, scikit-learn, and PyPDF2  
-> 👨‍💻 Created by [Bakki Mahesh](https://github.com/mahesh123-pro)
+> 👨 Developed by [Bakki Mahesh](https://github.com/mahesh123-pro)
 
 ---
 
-## 📌 Features
+##  Features
 
-- ✅ Upload PDF Resume and match it with job descriptions
-- 💯 Cosine similarity score using TF-IDF
-- 🚫 Detects missing keywords from resume
-- 📄 Clean and responsive UI
-- 🔒 Secure PDF handling
-- 📦 Easy to deploy on any platform
+- 📄 Upload and analyze PDF resumes
+- 📊 Generate a matching score between resume and job description
+- 🔍 Detect and highlight missing skills/keywords
+- 🧠 Built using AIML techniques (TF-IDF + Cosine Similarity)
+- 🌐 Simple and clean UI (HTML/CSS/JS + Flask backend)
+- ✅ Completely local processing (no external resume storage)
+
+---
+
+## 🤖 AI/ML Tools & Concepts Used
+
+| Tool / Concept        | Description |
+|-----------------------|-------------|
+| `TF-IDF (Term Frequency-Inverse Document Frequency)` | Converts resume and JD into numerical vectors by evaluating term importance |
+| `Cosine Similarity`   | Measures similarity between the vectorized resume and job description |
+| `scikit-learn`        | Used for TF-IDF transformation and computing cosine similarity |
+| `Natural Language Processing (NLP)` | Applied for keyword extraction and text preprocessing |
+| `PyPDF2`              | Extracts text from uploaded PDF resumes |
+| `Set operations in Python` | Used to identify missing keywords from job description |
 
 ---
 
 ## 🛠️ Tech Stack
 
-| Tech | Description |
-|------|-------------|
-| `Python` | Backend logic and PDF processing |
-| `Flask` | Lightweight web framework |
-| `PyPDF2` | Text extraction from PDF resumes |
-| `scikit-learn` | TF-IDF + Cosine similarity calculations |
-| `HTML/CSS/JS` | Frontend interface |
+| Layer       | Technology         |
+|-------------|--------------------|
+| Frontend    | HTML, CSS, JavaScript |
+| Backend     | Python + Flask     |
+| PDF Parsing | PyPDF2             |
+| AI/ML       | scikit-learn (TF-IDF, Cosine Similarity) |
+| Hosting     | Can be deployed on Render, Railway, or locally |
 
 ---
 
-## 📂 Project Structure
+## 📁 Project Structure
+
+resume_screening_project/
+├── app.py # Flask application logic
+├── job_description.txt # JD file to compare against resumes
+├── requirements.txt # List of dependencies
+├── templates/
+│ └── index.html # Frontend HTML page
+└── resumes/ # Uploaded resume storage
+
+
+
+## 🧪 How to Run Locally
+
+1. **Clone the repository**
+```bash
+git clone https://github.com/mahesh123-pro/resume-screening-ai.git
+cd resume-screening-ai
 
